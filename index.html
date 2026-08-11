@@ -194,9 +194,11 @@
                 </h3>
                 <div class="text-2xl bg-blue-50 p-6 rounded-lg leading-relaxed space-y-4">
                     <div class="flex items-start">
+                        <span class="mr-3 font-bold">-</span>
                         <div class="flex-1">상대와 긍정적인 관계를 맺거나 유지하는 데 도움을 줌.</div>
                     </div>
                     <div class="flex items-start">
+                        <span class="mr-3 font-bold">-</span>
                         <div class="flex-1">상대와 신뢰감과 유대감을 형성하고 협력적으로 소통할 수 있음.</div>
                     </div>
                 </div>
@@ -222,22 +224,42 @@
                 </h3>
                 <div class="text-2xl bg-green-50 p-6 rounded-lg leading-relaxed">
                     <div class="flex items-start mb-6">
+                        <span class="mr-3 font-bold">-</span>
                         <div class="flex-1">갈등이 발생한 원인을 정확하게 분석함.</div>
                     </div>
                     <div class="flex items-start mb-6">
+                        <span class="mr-3 font-bold">-</span>
                         <div class="flex-1">갈등을 조정하는 방법의 내용 요소에 맞추어 자신의 감정과 욕구를 진솔하게 표현함.
-                            <div class="mt-6 bg-green-50 p-6 rounded-lg border-l-4 border-green-500 shadow-sm border border-green-200">
-                                <strong class="text-green-800 block mb-4 text-3xl">※ 갈등을 조정하는 방법의 내용 요소</strong>
-                                <ul class="list-none text-gray-800 space-y-3">
-                                    <li class="flex items-start"><div class="flex-1">객관적인 상황 전달</div></li>
-                                    <li class="flex items-start"><div class="flex-1">자신이 느낀 감정 표현</div></li>
-                                    <li class="flex items-start"><div class="flex-1">상황에 관한 자신의 욕구 표현</div></li>
-                                    <li class="flex items-start"><div class="flex-1">상대에게 바라는 바를 구체적으로 요청</div></li>
+                            <div class="mt-6 bg-white p-6 rounded-lg border-l-4 border-green-500 shadow-sm border border-green-200">
+                                <strong class="text-green-800 flex items-start mb-4 text-3xl">
+                                    <!-- ※ 기호에 고정 너비(w-10)를 주어 뒤의 '갈' 위치를 고정 -->
+                                    <span class="w-10 shrink-0">※</span>
+                                    <span class="flex-1">갈등을 조정하는 방법의 내용 요소</span>
+                                </strong>
+                                <!-- ul 태그에도 고정 너비만큼 여백(pl-10)을 주어 '-' 기호가 '갈' 자 바로 아래 오도록 배치 -->
+                                <ul class="list-none text-gray-800 space-y-3 pl-10">
+                                    <li class="flex items-start">
+                                        <span class="mr-3 font-bold">-</span>
+                                        <div class="flex-1">객관적인 상황 전달</div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="mr-3 font-bold">-</span>
+                                        <div class="flex-1">자신이 느낀 감정 표현</div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="mr-3 font-bold">-</span>
+                                        <div class="flex-1">상황에 관한 자신의 욕구 표현</div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="mr-3 font-bold">-</span>
+                                        <div class="flex-1">상대에게 바라는 바를 구체적으로 요청</div>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="flex items-start">
+                        <span class="mr-3 font-bold">-</span>
                         <div class="flex-1">일방적인 비난이나 비판 등 갈등을 악화시킬 수 있는 표현을 경계함.</div>
                     </div>
                 </div>
@@ -249,9 +271,11 @@
                 </h3>
                 <div class="text-2xl bg-green-50 p-6 rounded-lg leading-relaxed space-y-4">
                     <div class="flex items-start">
+                        <span class="mr-3 font-bold">-</span>
                         <div class="flex-1">상대와의 관계를 원만하게 유지하는 데 도움을 줌.</div>
                     </div>
                     <div class="flex items-start">
+                        <span class="mr-3 font-bold">-</span>
                         <div class="flex-1">갈등이 악화되는 것을 막고, 갈등 상황을 효과적으로 관리할 수 있음.</div>
                     </div>
                 </div>
@@ -269,7 +293,9 @@
 
             <div id="vocab-flashcard-area">
                 <h3 class="text-3xl font-bold text-purple-600 mb-6 text-center">어휘 플래시 카드 (클릭하여 뜻과 예문 확인)</h3>
-                <div id="flashcards-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-2xl">
+                <!-- 기존: grid-cols-1 md:grid-cols-2 lg:grid-cols-3 -->
+                <!-- 수정: 항상 3열 10행으로 보이도록 grid-cols-3 적용 -->
+                <div id="flashcards-grid" class="grid grid-cols-3 gap-6 text-2xl">
                     <!-- JS로 동적 생성됨 -->
                 </div>
             </div>
