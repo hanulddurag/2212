@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-2-1 (2) 공감하고 조정하는 대화</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Malgun Gothic', sans-serif; background-color: #f8fafc; }
+        .hidden-section { display: none !important; }
+        
+        /* 플래시 카드 스타일 */
+        .flashcard-container { perspective: 1000px; cursor: pointer; height: 180px;}
+        .flashcard { position: relative; width: 100%; height: 100%; transition: transform 0.6s; transform-style: preserve-3d; }
+        .flashcard.flipped { transform: rotateY(180deg); }
+        .flashcard-front, .flashcard-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px; text-align: center; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .flashcard-front { background-color: #e0f2fe; color: #0369a1; font-weight: bold; font-size: 1.5rem;}
+        .flashcard-back { background-color: #f0fdf4; color: #166534; transform: rotateY(180deg); }
+    </style>
+</head>
+<body class="text-xl relative">
+
+    <header class="bg-blue-900 text-white p-6 text-left">
+        <h1 class="text-2xl font-bold">2-2-1 (2)</h1>
+        <h2 class="text-xl mt-1">공감하고 조정하는 대화</h2>
+    </header>
+
+    <nav class="flex justify-center gap-4 py-6 bg-white shadow-md mb-8 flex-wrap px-4">
+        <button onclick="showSection('section-comic')" class="px-6 py-3 bg-orange-500 text-white rounded-full font-bold hover:bg-orange-600 transition shadow-sm text-xl">교과서 만화 내용 정리</button>
+        <button onclick="showSection('section-empathy')" class="px-6 py-3 bg-blue-500 text-white rounded-full font-bold hover:bg-blue-600 transition shadow-sm text-xl">공감하는 대화</button>
+        <button onclick="showSection('section-mediation')" class="px-6 py-3 bg-green-500 text-white rounded-full font-bold hover:bg-green-600 transition shadow-sm text-xl">갈등을 조정하는 대화</button>
+        <button onclick="showSection('section-vocab')" class="px-6 py-3 bg-purple-500 text-white rounded-full font-bold hover:bg-purple-600 transition shadow-sm text-xl">어휘 정리</button>
+        <button onclick="showSection('section-quiz')" class="px-6 py-3 bg-red-500 text-white rounded-full font-bold hover:bg-red-600 transition shadow-sm text-xl">형성평가</button>
+    </nav>
+
+    <main class="max-w-5xl mx-auto p-4 mb-20">
+        
+        <!-- 0. 교과서 만화 내용 정리 섹션 -->
+        <section id="section-comic" class="bg-white p-10 rounded-xl shadow-md hidden-section">
+            <h2 class="text-4xl font-bold mb-10 text-center text-orange-800 border-b-2 border-orange-200 pb-4">교과서 만화 내용 정리</h2>
+            
+            <div class="mb-10 pl-8">
+                <h3 class="text-3xl font-bold text-orange-600 mb-4 flex items-start -ml-8">
+                    <span class="mr-2">🔸</span>누리와 현준의 대화
+                </h3>
+                <div class="text-2xl bg-orange-50 p-6 rounded-lg leading-relaxed">
+                    <div class="mb-6">
+                        <strong class="text-orange-900">누리</strong>가 우울한 감정을 표현하지만 <strong class="text-orange-900">현준</strong>이는 누리의 감정에 공감하지 못하고 빵에만 관심을 보임.
+                    </div>
+                    <div class="text-gray-700 border-l-4 border-orange-400 pl-4 py-2 flex flex-col gap-3">
+                        <div class="flex items-start">
+                            <strong class="text-gray-900 shrink-0 w-20">누리:</strong>
+                            <div class="flex-1">오늘 너무 우울해서 빵 샀어. 기분 별로였거든.</div>
+                        </div>
+                        <div class="flex items-start">
+                            <strong class="text-gray-900 shrink-0 w-20">현준:</strong>
+                            <div class="flex-1">무슨 빵 샀는데? 나도 빵 먹고 싶었는데!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-10 pl-8">
+                <h3 class="text-3xl font-bold text-orange-600 mb-4 flex items-start -ml-8">
+                    <span class="mr-2">🔸</span>민재와 친구들의 갈등 및 세아의 공감
+                </h3>
+                <div class="text-2xl bg-orange-50 p-6 rounded-lg leading-relaxed">
+                    <div class="mb-8">
+                        <div class="mb-6">
+                            <strong class="text-orange-900">건우</strong>와 <strong class="text-orange-900">하리</strong>가 앞머리를 자른 <strong class="text-orange-900">민재</strong>에게 배려 없는 말을 하여 민재가 상처를 받고 단톡방을 나감.
+                        </div>
+                        <div class="text-gray-700 border-l-4 border-orange-400 pl-4 py-2 flex flex-col gap-3">
+                            <div class="flex items-start">
+                                <strong class="text-gray-900 shrink-0 w-24">친구들:</strong>
+                                <div class="flex-1 text-xl">왜 이렇게 짧게 잘랐어! 푸하하!</div>
+                            </div>
+                            <div class="flex items-start">
+                                <strong class="text-gray-900 shrink-0 w-24">민재:</strong>
+                                <div class="flex-1 text-xl">알았어. 그만 얘기해. 나도 안 어울리는 거 알아.</div>
+                            </div>
+                            <div class="flex items-start mt-3">
+                                <strong class="text-gray-900 shrink-0 w-24">하리:</strong>
+                                <div class="flex-1 text-xl">계속 기분이 나빠 보이던데... 우리가 아침에 한 말 때문에 그래?</div>
+                            </div>
+                            <div class="flex items-start">
+                                <strong class="text-gray-900 shrink-0 w-24">시스템:</strong>
+                                <div class="flex-1 text-xl text-gray-500 font-bold">민재 님이 나갔습니다.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="mb-6">
+                            <strong class="text-orange-900">세아</strong>는 고민하는 건우에게 자신의 비슷한 경험을 공유하며 깊이 공감해 줌.
+                        </div>
+                        <div class="text-gray-700 border-l-4 border-orange-400 pl-4 py-2 flex flex-col gap-3">
+                            <div class="flex items-start">
+                                <strong class="text-gray-900 shrink-0 w-20">세아:</strong>
+                                <div class="flex-1">지금 네 마음이 어떤지 충분히 이해해. 나도 동생이랑 다투었을 때 서로 감정이 상해서 한동안 말도 하지 않았었거든.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-4 pl-8">
+                <h3 class="text-3xl font-bold text-orange-600 mb-4 flex items-start -ml-8">
+                    <span class="mr-2">🔸</span>건우와 민재의 갈등 조정
+                </h3>
+                <div class="text-2xl bg-orange-50 p-6 rounded-lg leading-relaxed">
+                    <div class="mb-6">
+                        <strong class="text-orange-900">건우</strong>가 먼저 민재에게 다가가 솔직한 감정과 바라는 바를 전하며 <strong class="text-orange-900">갈등을 조정</strong>함.
+                    </div>
+                    <div class="text-gray-700 border-l-4 border-orange-400 pl-4 py-2 flex flex-col gap-3">
+                        <div class="flex items-start">
+                            <strong class="text-gray-900 shrink-0 w-20">건우:</strong>
+                            <div class="flex-1">우리가 네 기분을 배려하며 말하지 않아서 네가 서운했을 것 같아. 그런데 네가 갑자기 대화방을 나가서 나도 당황스럽고 속상하더라고. 앞으로는 네 마음을 나한테 솔직하게 말해 주면 좋겠어.</div>
+                        </div>
+                        <div class="flex items-start mt-3">
+                            <strong class="text-gray-900 shrink-0 w-20">민재:</strong>
+                            <div class="flex-1">그래, 말도 없이 대화방을 나가 버린 건 내가 심했던 것 같아. 이제 됐지?</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1. 공감하는 대화 섹션 -->
+        <section id="section-empathy" class="bg-white p-10 rounded-xl shadow-md hidden-section">
+            <h2 class="text-4xl font-bold mb-10 text-center text-blue-800 border-b-2 border-blue-200 pb-4">공감하는 대화</h2>
+            
+            <div class="mb-10 pl-8">
+                <h3 class="text-3xl font-bold text-blue-600 mb-4 flex items-start -ml-8">
+                    <span class="mr-2">🔹</span>뜻
+                </h3>
+                <div class="text-2xl bg-blue-50 p-6 rounded-lg flex items-start">
+                    <div class="flex-1">상대의 감정을 깊이 있게 이해하고 상대의 관점에서 문제를 바라보는 대화.</div>
+                </div>
+            </div>
+            
+            <div class="mb-10 pl-8">
+                <h3 class="text-3xl font-bold text-blue-600 mb-4 flex items-start -ml-8">
+                    <span class="mr-2">🔹</span>방법
+                </h3>
+                <!-- 설명 부분은 배경을 하얗게, 좌측 라벨 박스만 배경색(bg-blue-50) 적용 및 2단 배열 -->
+                <div class="text-2xl bg-white p-6 rounded-lg leading-relaxed shadow-sm border border-blue-100">
+                    
+                    <!-- 소극적 들어 주기 -->
+                    <div class="flex flex-col md:flex-row gap-6 mb-6">
+                        <div class="w-full md:w-56 bg-blue-50 rounded-2xl flex items-center justify-center p-4 text-center font-bold text-gray-800 shrink-0 border border-blue-200 shadow-sm">
+                            소극적<br>들어 주기
+                        </div>
+                        <div class="flex-1 flex flex-col justify-center gap-4">
+                            <div class="flex items-start">
+                                <span class="mr-3 text-purple-700 font-bold text-3xl leading-none mt-1">·</span>
+                                <div class="flex-1"><strong class="text-gray-900">집중하기</strong>: 몸짓이나 표정으로 상대의 말에 집중하고 있다는 것을 보여 줌.</div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="mr-3 text-purple-700 font-bold text-3xl leading-none mt-1">·</span>
+                                <div class="flex-1"><strong class="text-gray-900">격려하기</strong>: 상대가 말을 이어가도록 격려함.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <hr class="border-gray-200 mb-6">
+                    
+                    <!-- 적극적 들어 주기 -->
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="w-full md:w-56 bg-blue-50 rounded-2xl flex items-center justify-center p-4 text-center font-bold text-gray-800 shrink-0 border border-blue-200 shadow-sm">
+                            적극적<br>들어 주기
+                        </div>
+                        <div class="flex-1 flex flex-col justify-center gap-4">
+                            <div class="flex items-start">
+                                <span class="mr-3 text-purple-700 font-bold text-3xl leading-none mt-1">·</span>
+                                <div class="flex-1"><strong class="text-gray-900">요약하기 및 재구성하기</strong>: 상대의 말을 자신의 말로 요약하고 재구성함.</div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="mr-3 text-purple-700 font-bold text-3xl leading-none mt-1">·</span>
+                                <div class="flex-1"><strong class="text-gray-900">경험 공유하기</strong>: 상대의 경험과 비슷한 자신의 경험을 공유하며 공감대를 형성함.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="mb-4 pl-8">
+                <h3 class="text-3xl font-bold text-blue-600 mb-4 flex items-start -ml-8">
+                    <span class="mr-2">🔹</span>효과
+                </h3>
+                <div class="text-2xl bg-blue-50 p-6 rounded-lg leading-relaxed space-y-4">
+                    <div class="flex items-start">
+                        <div class="flex-1">상대와 긍정적인 관계를 맺거나 유지하는 데 도움을 줌.</div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-1">상대와 신뢰감과 유대감을 형성하고 협력적으로 소통할 수 있음.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 갈등을 조정하는 대화 섹션 -->
+        <section id="section-mediation" class="bg-white p-10 rounded-xl shadow-md hidden-section">
+            <h2 class="text-4xl font-bold mb-10 text-center text-green-800 border-b-2 border-green-200 pb-4">갈등을 조정하는 대화</h2>
+            
+            <div class="mb-10 pl-8">
+                <h3 class="text-3xl font-bold text-green-600 mb-4 flex items-start -ml-8">
+                    <span class="mr-2">🔸</span>뜻
+                </h3>
+                <div class="text-2xl bg-green-50 p-6 rounded-lg flex items-start">
+                    <div class="flex-1">갈등 상황에 대한 자신의 감정과 바라는 바를 진솔하게 표현하며 갈등을 해결하는 대화.</div>
+                </div>
+            </div>
+            
+            <div class="mb-10 pl-8">
+                <h3 class="text-3xl font-bold text-green-600 mb-4 flex items-start -ml-8">
+                    <span class="mr-2">🔸</span>방법
+                </h3>
+                <div class="text-2xl bg-green-50 p-6 rounded-lg leading-relaxed">
+                    <div class="flex items-start mb-6">
+                        <div class="flex-1">갈등이 발생한 원인을 정확하게 분석함.</div>
+                    </div>
+                    <div class="flex items-start mb-6">
+                        <div class="flex-1">갈등을 조정하는 방법의 내용 요소에 맞추어 자신의 감정과 욕구를 진솔하게 표현함.
+                            <div class="mt-6 bg-green-50 p-6 rounded-lg border-l-4 border-green-500 shadow-sm border border-green-200">
+                                <strong class="text-green-800 block mb-4 text-3xl">※ 갈등을 조정하는 방법의 내용 요소</strong>
+                                <ul class="list-none text-gray-800 space-y-3">
+                                    <li class="flex items-start"><div class="flex-1">객관적인 상황 전달</div></li>
+                                    <li class="flex items-start"><div class="flex-1">자신이 느낀 감정 표현</div></li>
+                                    <li class="flex items-start"><div class="flex-1">상황에 관한 자신의 욕구 표현</div></li>
+                                    <li class="flex items-start"><div class="flex-1">상대에게 바라는 바를 구체적으로 요청</div></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-1">일방적인 비난이나 비판 등 갈등을 악화시킬 수 있는 표현을 경계함.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-4 pl-8">
+                <h3 class="text-3xl font-bold text-green-600 mb-4 flex items-start -ml-8">
+                    <span class="mr-2">🔸</span>효과
+                </h3>
+                <div class="text-2xl bg-green-50 p-6 rounded-lg leading-relaxed space-y-4">
+                    <div class="flex items-start">
+                        <div class="flex-1">상대와의 관계를 원만하게 유지하는 데 도움을 줌.</div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-1">갈등이 악화되는 것을 막고, 갈등 상황을 효과적으로 관리할 수 있음.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 어휘 정리 및 슈팅 게임 섹션 -->
+        <section id="section-vocab" class="bg-white p-10 rounded-xl shadow-md hidden-section">
+            <h2 class="text-4xl font-bold mb-8 text-center text-purple-800 border-b-2 border-purple-200 pb-4">어휘 정리 및 슈팅 게임</h2>
+            
+            <div class="flex justify-center gap-4 mb-10">
+                <button onclick="toggleVocabView('flashcard')" id="btn-flashcard" class="px-8 py-3 bg-purple-700 text-white rounded font-bold text-2xl transition shadow">어휘 학습</button>
+                <button onclick="toggleVocabView('game')" id="btn-game" class="px-8 py-3 bg-gray-200 text-gray-700 rounded font-bold text-2xl hover:bg-gray-300 transition shadow">슈팅 게임</button>
+            </div>
+
+            <div id="vocab-flashcard-area">
+                <h3 class="text-3xl font-bold text-purple-600 mb-6 text-center">어휘 플래시 카드 (클릭하여 뜻과 예문 확인)</h3>
+                <div id="flashcards-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-2xl">
+                    <!-- JS로 동적 생성됨 -->
+                </div>
+            </div>
+
+            <div id="vocab-game-area" class="hidden-section">
+                <div class="border-t-2 border-dashed border-gray-300 pt-8">
+                    <h3 class="text-3xl font-bold text-purple-600 mb-6 text-center">단어 슈팅 게임</h3>
+                    
+                    <div id="game-start-info" class="bg-purple-50 p-8 rounded mb-6 text-center text-2xl shadow-sm">
+                        <p class="font-bold text-3xl mb-6">게임 방법 설명</p>
+                        <div class="text-left max-w-3xl mx-auto space-y-4">
+                            <p class="ml-4">- 상단에 표시된 뜻에 맞는 단어를 쏘아 맞히는 게임임.</p>
+                            <p class="ml-4">- 좌우 화살표 키(◀, ▶)로 이동하고, 스페이스바(Space)로 발사함. 마우스 클릭으로도 발사 가능함.</p>
+                            <p class="ml-4 font-bold text-blue-700">- 단어를 10개 맞힐 때마다 단어가 떨어지는 속도가 눈에 띄게 빨라짐.</p>
+                            <p class="ml-4 font-bold text-red-600">- 정답 단어를 놓치면 생명(하트)이 깎이며, 5개를 모두 잃으면 게임이 종료됨.</p>
+                        </div>
+                        <button id="startGameBtn" class="mt-8 px-10 py-4 bg-purple-600 text-white font-bold rounded-full hover:bg-purple-700 text-2xl shadow-lg">게임 시작</button>
+                    </div>
+                    
+                    <!-- 인게임 UI -->
+                    <div id="game-ui" class="hidden-section relative mt-6 w-full max-w-[800px] mx-auto">
+                        <div class="absolute inset-0 pointer-events-none z-10 p-4 flex flex-col justify-between">
+                            <div class="flex justify-between items-start">
+                                <div id="game-lives" class="text-red-500 font-bold text-3xl drop-shadow-md">❤️❤️❤️❤️❤️</div>
+                                <div id="game-score" class="text-white font-bold text-2xl drop-shadow-md">점수: 0</div>
+                            </div>
+                            <div id="game-target-meaning" class="text-center text-yellow-300 font-bold text-3xl px-4 drop-shadow-lg mb-auto mt-4">단어 뜻이 여기에 표시됨.</div>
+                        </div>
+                        
+                        <div id="game-over-screen" class="hidden-section absolute inset-0 bg-black/80 z-20 flex flex-col items-center justify-center text-white rounded-lg pointer-events-auto">
+                            <h2 class="text-6xl font-bold mb-6 text-red-500 drop-shadow-md">게임 종료!</h2>
+                            <p id="final-score" class="text-4xl mb-10 font-bold text-yellow-300">최종 점수: 0점</p>
+                            <button onclick="startGame()" class="px-10 py-4 bg-purple-600 text-white font-bold text-3xl rounded-full hover:bg-purple-700 transition shadow-lg">다시 하기</button>
+                        </div>
+
+                        <canvas id="gameCanvas" width="800" height="400" class="shadow-md rounded-lg bg-[#0f172a] block pointer-events-auto cursor-crosshair"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. 형성평가 섹션 -->
+        <section id="section-quiz" class="bg-white p-10 rounded-xl shadow-md hidden-section">
+            <h2 class="text-4xl font-bold mb-10 text-center text-red-800 border-b-2 border-red-200 pb-4">형성평가</h2>
+            
+            <div id="quiz-student-info" class="bg-red-50 p-8 rounded-lg mb-8 shadow-sm relative">
+                <div id="info-warning" class="hidden-section bg-red-100 border border-red-400 text-red-700 px-6 py-4 rounded relative mb-6 text-xl">
+                    <strong class="font-bold">알림:</strong> 인적 사항(학년, 반, 번호, 이름)을 모두 입력해 주세요.
+                </div>
+
+                <h3 class="text-3xl font-bold mb-6 text-red-700">평가 시작 전 인적 사항 입력란</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-2xl">
+                    <div>
+                        <label class="block font-bold text-gray-700 mb-2">학년</label>
+                        <input type="number" id="info-grade" class="w-full border-2 border-gray-300 rounded p-3 focus:border-red-400 focus:outline-none" min="1" max="3">
+                    </div>
+                    <div>
+                        <label class="block font-bold text-gray-700 mb-2">반</label>
+                        <input type="number" id="info-class" class="w-full border-2 border-gray-300 rounded p-3 focus:border-red-400 focus:outline-none" min="1" max="20">
+                    </div>
+                    <div>
+                        <label class="block font-bold text-gray-700 mb-2">번호</label>
+                        <input type="number" id="info-num" class="w-full border-2 border-gray-300 rounded p-3 focus:border-red-400 focus:outline-none" min="1" max="50">
+                    </div>
+                    <div>
+                        <label class="block font-bold text-gray-700 mb-2">이름</label>
+                        <input type="text" id="info-name" class="w-full border-2 border-gray-300 rounded p-3 focus:border-red-400 focus:outline-none">
+                    </div>
+                </div>
+                <button id="startQuizBtn" class="mt-10 w-full py-4 bg-red-500 text-white font-bold text-3xl rounded-lg hover:bg-red-600 transition shadow-md">평가 시작하기</button>
+            </div>
+
+            <div id="quiz-questions-container" class="hidden-section relative">
+                <form id="quiz-form">
+                    <div id="questions-list" class="space-y-10">
+                        <!-- JS로 문제 동적 생성 -->
+                    </div>
+                    <button type="button" onclick="checkQuizSubmit()" class="mt-10 w-full py-5 bg-gray-800 text-white font-bold text-3xl rounded-lg hover:bg-gray-900 transition shadow-lg">제출 및 채점하기</button>
+                </form>
+            </div>
+
+            <div id="quiz-result" class="hidden-section mt-10 p-10 bg-blue-50 border-2 border-blue-200 rounded-lg shadow-sm">
+                <h3 class="text-4xl font-bold text-center text-blue-800 mb-8">평가 결과 안내</h3>
+                <p id="result-score" class="text-center text-4xl font-bold mb-10 text-red-600"></p>
+                <div id="result-details" class="space-y-8 text-2xl">
+                    <!-- 채점 결과 및 설명 동적 생성 -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 모달 UI (alert 대신 사용) -->
+    <div id="custom-modal" class="hidden-section fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4">
+        <div class="bg-white p-10 rounded-xl shadow-2xl text-center max-w-md w-full">
+            <h3 id="modal-title" class="text-3xl font-bold mb-6 text-gray-800">알림</h3>
+            <p id="modal-message" class="text-2xl mb-10 text-gray-600">메시지 내용</p>
+            <div id="modal-buttons" class="flex justify-center gap-4">
+                <!-- 동적으로 버튼 생성 -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showModal(title, message, buttons) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-message').innerHTML = message;
+            const btnContainer = document.getElementById('modal-buttons');
+            btnContainer.innerHTML = '';
+            buttons.forEach(btn => {
+                const b = document.createElement('button');
+                b.innerText = btn.text;
+                b.className = `px-6 py-3 font-bold rounded-lg w-1/2 transition text-2xl ${btn.class}`;
+                b.onclick = () => {
+                    document.getElementById('custom-modal').classList.add('hidden-section');
+                    if(btn.action) btn.action();
+                };
+                btnContainer.appendChild(b);
+            });
+            document.getElementById('custom-modal').classList.remove('hidden-section');
+        }
+
+        function showSection(sectionId) {
+            const sections = ['section-comic', 'section-empathy', 'section-mediation', 'section-vocab', 'section-quiz'];
+            sections.forEach(id => {
+                const el = document.getElementById(id);
+                if(id === sectionId) el.classList.remove('hidden-section');
+                else el.classList.add('hidden-section');
+            });
+            if(sectionId === 'section-vocab') {
+                if(!gameActive) renderFlashcards();
+            }
+        }
+        showSection('section-empathy');
+
+        function toggleVocabView(view) {
+            const btnFlashcard = document.getElementById('btn-flashcard');
+            const btnGame = document.getElementById('btn-game');
+            const areaFlashcard = document.getElementById('vocab-flashcard-area');
+            const areaGame = document.getElementById('vocab-game-area');
+
+            if(view === 'flashcard') {
+                btnFlashcard.className = "px-8 py-3 bg-purple-700 text-white rounded font-bold text-2xl transition shadow";
+                btnGame.className = "px-8 py-3 bg-gray-200 text-gray-700 rounded font-bold text-2xl hover:bg-gray-300 transition shadow";
+                areaFlashcard.classList.remove('hidden-section');
+                areaGame.classList.add('hidden-section');
+                renderFlashcards();
+            } else {
+                btnFlashcard.className = "px-8 py-3 bg-gray-200 text-gray-700 rounded font-bold text-2xl hover:bg-gray-300 transition shadow";
+                btnGame.className = "px-8 py-3 bg-purple-700 text-white rounded font-bold text-2xl transition shadow";
+                areaFlashcard.classList.add('hidden-section');
+                areaGame.classList.remove('hidden-section');
+            }
+        }
+
+        const vocabData = [
+            { word: "순조롭다", meaning: "일 등이 아무 탈이나 말썽 없이 예정대로 잘되어 가는 상태에 있다.", example: "모든 준비가 순조롭게 진행되고 있다." },
+            { word: "자초지종", meaning: "처음부터 끝까지의 과정.", example: "사건의 자초지종을 자세히 설명해 주었다." },
+            { word: "악화하다", meaning: "일의 형세가 나쁜 쪽으로 바뀌다.", example: "비가 오면서 날씨가 더욱 악화하였다." },
+            { word: "원만하다", meaning: "서로 사이가 좋다.", example: "그는 성격이 둥글어 대인 관계가 원만하다." },
+            { word: "외향적", meaning: "마음의 움직임을 적극적으로 나타내는 것.", example: "동생은 사람들과 어울리는 것을 좋아하는 외향적인 성격이다." },
+            { word: "어조", meaning: "말의 가락.", example: "그의 단호한 어조에서 굳은 의지가 느껴졌다." },
+            { word: "추측하다", meaning: "미루어 생각하여 헤아리다.", example: "떨어진 단서들로 범인이 누구인지 추측해 보았다." },
+            { word: "소음", meaning: "불규칙하게 뒤섞여 불쾌하고 시끄러운 소리.", example: "공사장에서 발생하는 소음 때문에 잠을 깼다." },
+            { word: "협력", meaning: "힘을 합하여 서로 도움.", example: "어려운 과제일수록 친구들과의 협력이 필요하다." },
+            { word: "재구성하다", meaning: "한번 구성하였던 것을 다시 새롭게 구성하다.", example: "들은 이야기를 내 방식대로 재구성하여 전달했다." },
+            { word: "구체적", meaning: "실제적이고 세밀한 부분까지 담고 있는 것.", example: "계획을 더 구체적으로 세워야 실행하기 쉽다." },
+            { word: "격려하다", meaning: "용기나 의욕이 솟아나도록 북돋게 하다.", example: "선생님께서 우리에게 할 수 있다며 격려해 주셨다." },
+            { word: "해결하다", meaning: "제기된 문제를 해명하거나 얽힌 일을 잘 처리하다.", example: "오랜 대화 끝에 두 사람 사이의 오해를 해결했다." },
+            { word: "신념", meaning: "굳게 믿는 마음.", example: "그는 자신의 신념을 끝까지 굽히지 않았다." },
+            { word: "의견", meaning: "어떤 대상에 대하여 가지는 생각.", example: "회의에서 모두가 자신의 의견을 자유롭게 말헸다." },
+            { word: "고전", meaning: "오랫동안 널리 읽히고 모범이 될 만한 문학이나 예술 작품.", example: "시간이 지나도 변치 않는 가치를 지닌 책을 고전이라 부른다." },
+            { word: "주관적", meaning: "자기의 견해나 관점을 기초로 하는.", example: "미술 작품에 대한 평가는 매우 주관적일 수 있다." },
+            { word: "경청하다", meaning: "귀를 기울여 듣다.", example: "친구의 고민을 진지하게 경청하였다." },
+            { word: "입장", meaning: "당면하고 있는 상황.", example: "상대방의 입장이 되어 생각해 보면 이해할 수 있다." },
+            { word: "감명", meaning: "감격하여 마음에 깊이 새김.", example: "그의 열정적인 연설에 큰 감명을 받았다." },
+            { word: "띠지", meaning: "지폐나 서류 등의 가운데를 둘러 감아 매는 종이.", example: "새로 산 책에는 작가의 추천사가 적힌 띠지가 둘러져 있었다." },
+            { word: "사연", meaning: "일의 앞뒤 사정과 까닭.", example: "라디오에 가슴 아픈 사연이 소개되었다." },
+            { word: "세대", meaning: "그때에 당면한 시대.", example: "디지털 기기에 익숙한 세대와 그렇지 않은 세대가 있다." },
+            { word: "반응하다", meaning: "자극에 대응하여 어떤 현상이 일어나다.", example: "그 약은 몸에 빠르게 반응하여 통증을 줄여 주었다." },
+            { word: "당부", meaning: "말로 단단히 부탁함.", example: "어머니는 늦지 않게 일찍 들어오라고 신신당부하셨다." },
+            { word: "담다", meaning: "어떤 내용을 그림, 글, 표정 등의 속에 포함하다.", example: "편지에 고마운 마음을 가득 담아 보냈다." },
+            { word: "후세", 단어: "다음에 오는 세상.", example: "우리의 빛나는 문화를 후세에 온전히 물려주어야 단다." },
+            { word: "발전하다", meaning: "더 낫고 좋은 상태나 단계로 나아가다.", example: "과학 기술이 발전하면서 우리 삶도 크게 변했다." },
+            { word: "인상", meaning: "어떤 대상에 대하여 마음속에 새겨지는 느낌.", example: "첫인상이 좋아서 쉽게 친해질 수 있었다." },
+            { word: "고민", meaning: "어찌할 줄 몰라 괴로워하고 애를 태움.", example: "진로 문제로 깊은 고민에 빠졌다." }
+        ];
+
+        function renderFlashcards() {
+            const grid = document.getElementById('flashcards-grid');
+            grid.innerHTML = '';
+            vocabData.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'flashcard-container';
+                card.innerHTML = `
+                    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                        <div class="flashcard-front">${item.word}</div>
+                        <div class="flashcard-back">
+                            <div class="font-bold text-2xl mb-3 border-b border-green-200 pb-2">${item.meaning}</div>
+                            <div class="text-xl text-green-700 italic">" ${item.example} "</div>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        let gameActive = false;
+        let animationId;
+        
+        let score = 0;
+        let correctAttempts = 0; 
+        let baseSpeed = 0.8; 
+        let lives = 5;
+        let currentTarget = null;
+        let fallingWords = [];
+        let bullets = [];
+        
+        const player = { x: 370, y: 340, width: 60, height: 50, speed: 6, moveLeft: false, moveRight: false };
+
+        document.addEventListener('keydown', (e) => {
+            if(!gameActive) return;
+            if(e.code === 'ArrowLeft') player.moveLeft = true;
+            if(e.code === 'ArrowRight') player.moveRight = true;
+            if(e.code === 'Space') { e.preventDefault(); shootBullet(); }
+        });
+        document.addEventListener('keyup', (e) => {
+            if(e.code === 'ArrowLeft') player.moveLeft = false;
+            if(e.code === 'ArrowRight') player.moveRight = false;
+        });
+        canvas.addEventListener('mousedown', () => { if(gameActive) shootBullet(); });
+
+        function shootBullet() {
+            bullets.push({ x: player.x + player.width/2 - 2.5, y: player.y, width: 5, height: 12, speed: 8 });
+        }
+
+        document.getElementById('startGameBtn').addEventListener('click', () => {
+            document.getElementById('game-start-info').classList.add('hidden-section');
+            document.getElementById('game-ui').classList.remove('hidden-section');
+            startGame();
+        });
+
+        function startGame() {
+            document.getElementById('game-over-screen').classList.add('hidden-section');
+            score = 0; correctAttempts = 0; baseSpeed = 0.8; lives = 5;
+            fallingWords = []; bullets = [];
+            player.x = canvas.width / 2 - player.width / 2;
+            
+            gameActive = true;
+            updateLivesUI();
+            setNewTarget();
+            gameLoop();
+        }
+
+        function updateLivesUI() {
+            let hearts = '';
+            for(let i = 0; i < lives; i++) hearts += '❤️';
+            document.getElementById('game-lives').innerText = hearts;
+        }
+
+        function setNewTarget() {
+            const targetIndex = Math.floor(Math.random() * vocabData.length);
+            currentTarget = vocabData[targetIndex];
+            document.getElementById('game-target-meaning').innerText = currentTarget.meaning;
+            document.getElementById('game-score').innerText = `점수: ${score}`;
+
+            fallingWords = [];
+            let options = [currentTarget];
+            while(options.length < 4) {
+                let randomWord = vocabData[Math.floor(Math.random() * vocabData.length)];
+                if(!options.includes(randomWord)) options.push(randomWord);
+            }
+            options.sort(() => Math.random() - 0.5);
+
+            options.forEach((opt, index) => {
+                fallingWords.push({
+                    text: opt.word,
+                    isCorrect: opt.word === currentTarget.word,
+                    x: 60 + index * 180, 
+                    y: -50,
+                    width: 120, 
+                    height: 40,
+                    speed: baseSpeed + (Math.random() * 0.4) 
+                });
+            });
+        }
+
+        function gameLoop() {
+            if(!gameActive) return;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            if(player.moveLeft && player.x > 0) player.x -= player.speed;
+            if(player.moveRight && player.x < canvas.width - player.width) player.x += player.speed;
+
+            // 플레이어 우주선 그리기
+            ctx.save();
+            ctx.translate(player.x + player.width/2, player.y + player.height/2);
+            
+            ctx.fillStyle = '#94a3b8';
+            ctx.beginPath();
+            ctx.moveTo(0, -25); 
+            ctx.lineTo(6, -10); 
+            ctx.lineTo(30, 5);  
+            ctx.lineTo(8, 10);  
+            ctx.lineTo(12, 25); 
+            ctx.lineTo(0, 22);  
+            ctx.lineTo(-12, 25); 
+            ctx.lineTo(-8, 10); 
+            ctx.lineTo(-30, 5); 
+            ctx.lineTo(-6, -10); 
+            ctx.closePath();
+            ctx.fill();
+            ctx.strokeStyle = '#334155';
+            ctx.lineWidth = 1.5;
+            ctx.stroke();
+
+            ctx.fillStyle = '#38bdf8';
+            ctx.beginPath();
+            ctx.moveTo(0, -12);
+            ctx.lineTo(4, 2);
+            ctx.lineTo(-4, 2);
+            ctx.closePath();
+            ctx.fill();
+            
+            ctx.fillStyle = '#bae6fd'; 
+            ctx.beginPath();
+            ctx.moveTo(0, -10);
+            ctx.lineTo(1.5, 0);
+            ctx.lineTo(0, 1);
+            ctx.closePath();
+            ctx.fill();
+
+            // 부스터 불꽃
+            ctx.fillStyle = '#f97316';
+            ctx.beginPath();
+            ctx.moveTo(3, 23);
+            ctx.lineTo(6, 35 + Math.random() * 8); 
+            ctx.lineTo(9, 24);
+            ctx.closePath();
+            ctx.fill();
+            ctx.beginPath();
+            ctx.moveTo(-3, 23);
+            ctx.lineTo(-6, 35 + Math.random() * 8); 
+            ctx.lineTo(-9, 24);
+            ctx.closePath();
+            ctx.fill();
+
+            ctx.fillStyle = '#fef08a';
+            ctx.beginPath();
+            ctx.moveTo(4, 23);
+            ctx.lineTo(6, 28 + Math.random() * 4);
+            ctx.lineTo(8, 24);
+            ctx.closePath();
+            ctx.fill();
+            ctx.beginPath();
+            ctx.moveTo(-4, 23);
+            ctx.lineTo(-6, 28 + Math.random() * 4);
+            ctx.lineTo(-8, 24);
+            ctx.closePath();
+            ctx.fill();
+            ctx.restore();
+
+            // 총알 이동 및 그리기
+            ctx.fillStyle = '#fef08a';
+            for(let i = bullets.length - 1; i >= 0; i--) {
+                let b = bullets[i];
+                b.y -= b.speed;
+                ctx.fillRect(b.x, b.y, b.width, b.height);
+                if(b.y < 0) bullets.splice(i, 1);
+            }
+
+            ctx.font = 'bold 20px Malgun Gothic';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            
+            let missedTarget = false;
+            let targetHit = false;
+
+            // 떨어지는 단어 처리 및 충돌 검사
+            for(let i = fallingWords.length - 1; i >= 0; i--) {
+                let w = fallingWords[i];
+                w.y += w.speed;
+                
+                ctx.fillStyle = '#f8fafc';
+                ctx.fillRect(w.x, w.y, w.width, w.height);
+                ctx.strokeStyle = '#cbd5e1';
+                ctx.strokeRect(w.x, w.y, w.width, w.height);
+                
+                ctx.fillStyle = '#0f172a';
+                ctx.fillText(w.text, w.x + w.width/2, w.y + w.height/2);
+
+                if(w.y > canvas.height) {
+                    if(w.isCorrect) {
+                        missedTarget = true;
+                        lives--;
+                        updateLivesUI();
+                    }
+                    fallingWords.splice(i, 1);
+                    continue;
+                }
+
+                for(let j = bullets.length - 1; j >= 0; j--) {
+                    let b = bullets[j];
+                    if(b.x < w.x + w.width && b.x + b.width > w.x && b.y < w.y + w.height && b.y + b.height > w.y) {
+                        if(w.isCorrect) {
+                            correctAttempts++;
+                            score += 10;
+                            targetHit = true;
+                            if (correctAttempts % 10 === 0) {
+                                baseSpeed += 0.15;
+                            }
+                            document.getElementById('game-score').innerText = `점수: ${score}`;
+                        } else {
+                            score = Math.max(0, score - 5);
+                            document.getElementById('game-score').innerText = `점수: ${score}`;
+                        }
+                        bullets.splice(j, 1); 
+                        fallingWords.splice(i, 1); 
+                        break;
+                    }
+                }
+            }
+
+            if (lives <= 0) {
+                gameActive = false;
+                document.getElementById('final-score').innerText = `최종 점수: ${score}점`;
+                document.getElementById('game-over-screen').classList.remove('hidden-section');
+                return; 
+            }
+
+            if(missedTarget || targetHit || fallingWords.length === 0) {
+                setNewTarget();
+            }
+
+            animationId = requestAnimationFrame(gameLoop);
+        }
+
+        const quizData = [
+            { id: 'q1', type: 'ox', q: '1. 공감하는 대화는 자신의 관점에서 문제를 바라보는 대화이다.', a: 'X', expl: '상대의 관점에서 문제를 바라보는 대화임.' },
+            { id: 'q2', type: 'ox', q: '2. 갈등을 조정하는 대화에서는 일방적인 비난이나 비판을 경계해야 한다.', a: 'O', expl: '비난이나 비판은 갈등을 더욱 악화시키는 표현이므로 경계해야 함.' },
+            { id: 'q3', type: 'short', q: '3. 상대가 말을 이어 가도록 "정말?", "그랬구나."와 같이 반응하는 소극적 들어 주기의 방법은 무엇인가?', a: '격려하기', expl: '상대의 말에 호응하며 계속 말하도록 돕는 격려하기임.' },
+            { id: 'q4', type: 'short', q: '4. 상대의 말을 자신의 말로 간추리고 다시 새롭게 구성하여 말하는 적극적 들어 주기의 방법은 무엇인가?', a: '재구성하기', expl: '요약하기 및 재구성하기에 해당하는 설명임.' },
+            { id: 'q5', type: 'choice', q: '5. 공감하는 대화의 장점으로 적절하지 않은 것은?', 
+              options: ['원만한 인간관계를 유지할 수 있다.', '다양한 시각으로 상대를 바라볼 수 있다.', '다른 사람과 협력적으로 소통할 수 있다.', '상대와 신뢰감과 유대감을 형성할 수 있다.', '대화 상대와 긍정적인 관계를 맺을 수 있다.'], a: '2', expl: '상대의 감정을 이해하고 상대의 관점에서 바라보는 것이 목적이므로, 상대를 다양한 시각으로 평가하는 것은 아님.' },
+            { id: 'q6', type: 'choice', q: '6. 갈등을 조정하는 방법의 내용 요소로 적절하지 않은 것은?', 
+              options: ['상황을 비판적으로 전달하기', '자신이 느낀 감정 표현하기', '상황에 관한 자신의 욕구 표현하기', '갈등을 발생하게 한 차이 분석하기', '상대에게 바라는 바를 구체적으로 요청하기'], a: '1', expl: '상황은 비판적이 아니라 객관적으로 전달해야 함.' },
+            { id: 'q7', type: 'choice', q: '7. 공감하는 대화의 방법 중 적극적 들어 주기에 해당하는 것은?', 
+              options: ['고개 끄덕이기', '눈 바라보기', '"정말?"이라고 반응하기', '몸짓으로 반응하기', '자신의 비슷한 경험 공유하기'], a: '5', expl: '나머지는 모두 소극적 들어 주기이며, 경험 공유하기는 적극적 들어 주기임.' },
+            { id: 'q8', type: 'choice', q: '8. 갈등 상황에서 "너는 매번 네 마음대로만 해!"라고 말하는 표현의 문제점은?', 
+              options: ['상황을 객관적으로 전달함.', '상대를 일방적으로 비난함.', '자신의 욕구를 명확히 표현함.', '갈등 원인을 정확히 분석함.', '구체적으로 바라는 바를 요청함.'], a: '2', expl: '감정을 앞세워 상대를 탓하고 비난하는 표현으로 갈등을 악화시킴.' },
+            { id: 'q9', type: 'choice', q: '9. 갈등을 조정하는 대화를 하는 궁극적인 목적으로 가장 적절한 것은?', 
+              options: ['신속한 의사소통', '원만한 대인 관계 유지', '자신의 감정의 무조건적 표출', '상대방의 논리적 오류 지적', '다양한 지식과 정보 교류'], a: '2', expl: '갈등을 조정하여 관계가 악화되는 것을 막고 원만한 관계를 유지하는 것이 목적임.' },
+            { id: 'q10', type: 'choice', q: '10. 친구가 속상한 일을 털어놓을 때 공감하는 대화로 가장 적절한 반응은?', 
+              options: ['"그건 네가 잘못 생각한 거야."', '"그래서 요점이 뭔데?"', '"나도 예전에 비슷한 일이 있어서 속상했어. 많이 힘들었겠다."', '"시간 지나면 다 해결될 거야."', '"네가 너무 예민한 거 아니야?"'], a: '3', expl: '경험 공유하기를 통해 상대의 감정에 깊이 공감하고 있는 반응임.' }
+        ];
+
+        const quizContainer = document.getElementById('questions-list');
+        
+        quizData.forEach((q, index) => {
+            const qDiv = document.createElement('div');
+            qDiv.className = 'p-6 bg-gray-50 border-2 border-gray-200 rounded-lg shadow-sm';
+            let html = `<p class="font-bold text-3xl mb-8 text-gray-800">${q.q}</p>`;
+            
+            if (q.type === 'ox') {
+                html += `
+                    <div class="grid grid-cols-2 w-full gap-6">
+                        <label class="flex items-center justify-center p-6 bg-white border-2 border-gray-300 rounded-lg cursor-pointer hover:bg-blue-50 transition">
+                            <input type="radio" name="${q.id}" value="O" class="w-8 h-8 text-blue-600">
+                            <span class="ml-4 text-4xl font-bold text-blue-600">O</span>
+                        </label>
+                        <label class="flex items-center justify-center p-6 bg-white border-2 border-gray-300 rounded-lg cursor-pointer hover:bg-red-50 transition">
+                            <input type="radio" name="${q.id}" value="X" class="w-8 h-8 text-red-600">
+                            <span class="ml-4 text-4xl font-bold text-red-600">X</span>
+                        </label>
+                    </div>
+                `;
+            } else if (q.type === 'short') {
+                html += `<input type="text" name="${q.id}" class="w-full md:w-2/3 p-4 border-2 border-gray-300 rounded-lg focus:border-red-400 focus:outline-none text-2xl" placeholder="정답 입력란">`;
+            } else if (q.type === 'choice') {
+                q.options.forEach((opt, i) => {
+                    html += `
+                        <label class="flex items-start mb-4 cursor-pointer p-4 hover:bg-gray-200 bg-white border border-gray-200 rounded-lg transition">
+                            <input type="radio" name="${q.id}" value="${i+1}" class="mt-2 w-6 h-6">
+                            <span class="ml-4 text-gray-800 text-2xl">①②③④⑤.charAt(i) ${opt}</span>
+                        </label>
+                    `;
+                });
+            }
+            qDiv.innerHTML = html;
+            quizContainer.appendChild(qDiv);
+        });
+
+        document.getElementById('startQuizBtn').addEventListener('click', () => {
+            const grade = document.getElementById('info-grade').value;
+            const classNum = document.getElementById('info-class').value;
+            const num = document.getElementById('info-num').value;
+            const name = document.getElementById('info-name').value;
+            const warningMsg = document.getElementById('info-warning');
+            
+            if(!grade || !classNum || !num || !name) {
+                warningMsg.classList.remove('hidden-section');
+                return;
+            }
+            
+            warningMsg.classList.add('hidden-section');
+            document.getElementById('quiz-student-info').classList.add('hidden-section');
+            document.getElementById('quiz-questions-container').classList.remove('hidden-section');
+        });
+
+        function checkQuizSubmit() {
+            const form = document.getElementById('quiz-form');
+            let allAnswered = true;
+
+            quizData.forEach(q => {
+                let userAnswer = '';
+                if(q.type === 'short') {
+                    userAnswer = form.elements[q.id].value.trim();
+                } else {
+                    const selected = form.elements[q.id].value;
+                    if(selected) userAnswer = selected;
+                }
+                if(!userAnswer) allAnswered = false;
+            });
+
+            if(!allAnswered) {
+                showModal(
+                    "잠깐만요!", 
+                    "아직 풀지 않은 문제가 있습니다.<br>그래도 제출하시겠습니까?", 
+                    [
+                        { text: '제출하기', class: 'bg-red-500 text-white hover:bg-red-600', action: forceSubmitQuiz },
+                        { text: '돌아가기', class: 'bg-gray-200 text-gray-800 hover:bg-gray-300' }
+                    ]
+                );
+            } else {
+                forceSubmitQuiz();
+            }
+        }
+
+        function forceSubmitQuiz() {
+            const form = document.getElementById('quiz-form');
+            let correctCount = 0;
+            let resultsHTML = '';
+            
+            const submitData = {
+                grade: document.getElementById('info-grade').value,
+                classNum: document.getElementById('info-class').value,
+                studentNum: document.getElementById('info-num').value,
+                name: document.getElementById('info-name').value,
+                totalScore: 0,
+                answers: {}
+            };
+
+            quizData.forEach(q => {
+                let userAnswer = '';
+                if(q.type === 'short') {
+                    userAnswer = form.elements[q.id].value.trim();
+                } else {
+                    const selected = form.elements[q.id].value;
+                    if(selected) userAnswer = selected;
+                }
+
+                let isCorrect = false;
+                if(q.type === 'short' && q.id === 'q4') {
+                    isCorrect = (userAnswer === '재구성하기' || userAnswer.includes('요약') || userAnswer.includes('재구성'));
+                } else {
+                    isCorrect = (userAnswer === q.a);
+                }
+
+                if(isCorrect) correctCount++;
+                submitData.answers[q.id] = { answer: userAnswer, isCorrect: isCorrect };
+
+                const colorClass = isCorrect ? 'text-blue-600' : 'text-red-600';
+                const mark = isCorrect ? '⭕ 정답' : '❌ 오답';
+                
+                resultsHTML += `
+                    <div class="border-b-2 border-blue-200 pb-8">
+                        <p class="font-bold text-gray-800 text-3xl mb-4">${q.q}</p>
+                        <p class="text-2xl mb-4">나의 답: <span class="font-bold ${colorClass}">${userAnswer || '미입력'}</span> (${mark})</p>
+                        <p class="text-gray-700 bg-white p-6 rounded-lg text-xl leading-relaxed shadow-inner"><strong class="text-blue-800 block mb-2">해설:</strong> ${q.expl}</p>
+                    </div>
+                `;
+            });
+
+            const totalScore = correctCount * 10;
+            submitData.totalScore = totalScore;
+            
+            document.getElementById('result-score').innerText = `총점: 100점 만점에 ${totalScore}점입니다.`;
+            document.getElementById('result-details').innerHTML = resultsHTML;
+            
+            document.getElementById('quiz-questions-container').classList.add('hidden-section');
+            document.getElementById('quiz-result').classList.remove('hidden-section');
+
+            sendDataToGoogleSheet(submitData);
+        }
+
+        function sendDataToGoogleSheet(data) {
+            // 👇👇 여기에 구글 앱스 스크립트 배포 시 발급받은 URL을 문자열(작은따옴표 안)로 넣어주세요!
+            const scriptURL = 'https://https://script.google.com/macros/s/AKfycbwMY5cy19grq6kps1y6GiwlC6CtVPo2XVTKpMyClu5ULsCuPxZjEoGVJ3Jn58BmKJNw7g/exec'; 
+
+            if (scriptURL === 'https://https://script.google.com/macros/s/AKfycbwMY5cy19grq6kps1y6GiwlC6CtVPo2XVTKpMyClu5ULsCuPxZjEoGVJ3Jn58BmKJNw7g/exec' || !scriptURL.includes('/exec')) {
+                console.log('유효한 웹앱 URL이 설정되지 않아 구글 시트 전송을 건너뜁니다.');
+                return;
+            }
+
+            fetch(scriptURL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                body: JSON.stringify(data)
+            })
+            .then(response => console.log('✅ 전송 완료:', response))
+            .catch(error => console.error('❌ 전송 에러:', error));
+        }
+    </script>
+</body>
+</html>
