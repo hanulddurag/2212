@@ -142,14 +142,16 @@
                 <h3 class="text-3xl font-bold text-blue-600 mb-4 flex items-start -ml-8">
                     <span class="mr-2">🔹</span>방법
                 </h3>
-                <!-- 설명 부분은 배경을 하얗게, 좌측 라벨 박스만 배경색(bg-blue-50) 적용 및 2단 배열 -->
-                <div class="text-2xl bg-white p-6 rounded-lg leading-relaxed shadow-sm border border-blue-100">
+                <!-- 설명하는 글 부분의 배경색을 없애고(흰색), 라벨에만 옅은 파란색(bg-blue-50) 부여 -->
+                <div class="text-2xl bg-white p-6 rounded-lg leading-relaxed shadow-sm border border-blue-200">
                     
                     <!-- 소극적 들어 주기 -->
                     <div class="flex flex-col md:flex-row gap-6 mb-6">
+                        <!-- 라벨에만 파란색 배경 부여 -->
                         <div class="w-full md:w-56 bg-blue-50 rounded-2xl flex items-center justify-center p-4 text-center font-bold text-gray-800 shrink-0 border border-blue-200 shadow-sm">
                             소극적<br>들어 주기
                         </div>
+                        <!-- 설명 영역은 배경 없음(투명/흰색) -->
                         <div class="flex-1 flex flex-col justify-center gap-4">
                             <div class="flex items-start">
                                 <span class="mr-3 text-purple-700 font-bold text-3xl leading-none mt-1">·</span>
@@ -166,9 +168,11 @@
                     
                     <!-- 적극적 들어 주기 -->
                     <div class="flex flex-col md:flex-row gap-6">
+                        <!-- 라벨에만 파란색 배경 부여 -->
                         <div class="w-full md:w-56 bg-blue-50 rounded-2xl flex items-center justify-center p-4 text-center font-bold text-gray-800 shrink-0 border border-blue-200 shadow-sm">
                             적극적<br>들어 주기
                         </div>
+                        <!-- 설명 영역은 배경 없음(투명/흰색) -->
                         <div class="flex-1 flex flex-col justify-center gap-4">
                             <div class="flex items-start">
                                 <span class="mr-3 text-purple-700 font-bold text-3xl leading-none mt-1">·</span>
@@ -357,7 +361,7 @@
         </section>
     </main>
 
-    <!-- 모달 UI (alert 대신 사용) -->
+    <!-- 모달 UI -->
     <div id="custom-modal" class="hidden-section fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4">
         <div class="bg-white p-10 rounded-xl shadow-2xl text-center max-w-md w-full">
             <h3 id="modal-title" class="text-3xl font-bold mb-6 text-gray-800">알림</h3>
@@ -447,7 +451,7 @@
             { word: "반응하다", meaning: "자극에 대응하여 어떤 현상이 일어나다.", example: "그 약은 몸에 빠르게 반응하여 통증을 줄여 주었다." },
             { word: "당부", meaning: "말로 단단히 부탁함.", example: "어머니는 늦지 않게 일찍 들어오라고 신신당부하셨다." },
             { word: "담다", meaning: "어떤 내용을 그림, 글, 표정 등의 속에 포함하다.", example: "편지에 고마운 마음을 가득 담아 보냈다." },
-            { word: "후세", 단어: "다음에 오는 세상.", example: "우리의 빛나는 문화를 후세에 온전히 물려주어야 단다." },
+            { word: "후세", meaning: "다음에 오는 세상.", example: "우리의 빛나는 문화를 후세에 온전히 물려주어야 단다." },
             { word: "발전하다", meaning: "더 낫고 좋은 상태나 단계로 나아가다.", example: "과학 기술이 발전하면서 우리 삶도 크게 변했다." },
             { word: "인상", meaning: "어떤 대상에 대하여 마음속에 새겨지는 느낌.", example: "첫인상이 좋아서 쉽게 친해질 수 있었다." },
             { word: "고민", meaning: "어찌할 줄 몰라 괴로워하고 애를 태움.", example: "진로 문제로 깊은 고민에 빠졌다." }
@@ -564,7 +568,6 @@
             // 플레이어 우주선 그리기
             ctx.save();
             ctx.translate(player.x + player.width/2, player.y + player.height/2);
-            
             ctx.fillStyle = '#94a3b8';
             ctx.beginPath();
             ctx.moveTo(0, -25); 
@@ -582,7 +585,6 @@
             ctx.strokeStyle = '#334155';
             ctx.lineWidth = 1.5;
             ctx.stroke();
-
             ctx.fillStyle = '#38bdf8';
             ctx.beginPath();
             ctx.moveTo(0, -12);
@@ -590,7 +592,6 @@
             ctx.lineTo(-4, 2);
             ctx.closePath();
             ctx.fill();
-            
             ctx.fillStyle = '#bae6fd'; 
             ctx.beginPath();
             ctx.moveTo(0, -10);
@@ -645,7 +646,6 @@
             let missedTarget = false;
             let targetHit = false;
 
-            // 떨어지는 단어 처리 및 충돌 검사
             for(let i = fallingWords.length - 1; i >= 0; i--) {
                 let w = fallingWords[i];
                 w.y += w.speed;
@@ -750,7 +750,7 @@
                     html += `
                         <label class="flex items-start mb-4 cursor-pointer p-4 hover:bg-gray-200 bg-white border border-gray-200 rounded-lg transition">
                             <input type="radio" name="${q.id}" value="${i+1}" class="mt-2 w-6 h-6">
-                            <span class="ml-4 text-gray-800 text-2xl">①②③④⑤.charAt(i) ${opt}</span>
+                            <span class="ml-4 text-gray-800 text-2xl">${'①②③④⑤'.charAt(i)} ${opt}</span>
                         </label>
                     `;
                 });
@@ -859,25 +859,27 @@
             document.getElementById('quiz-questions-container').classList.add('hidden-section');
             document.getElementById('quiz-result').classList.remove('hidden-section');
 
+            // 데이터를 구글 시트로 전송하는 함수 호출
             sendDataToGoogleSheet(submitData);
         }
 
+        // [매우 중요] google.script.run을 이용한 내부 통신 (URL 불필요)
         function sendDataToGoogleSheet(data) {
-            // 👇👇 여기에 구글 앱스 스크립트 배포 시 발급받은 URL을 문자열(작은따옴표 안)로 넣어주세요!
-            const scriptURL = 'https://https://script.google.com/macros/s/AKfycbwMY5cy19grq6kps1y6GiwlC6CtVPo2XVTKpMyClu5ULsCuPxZjEoGVJ3Jn58BmKJNw7g/exec'; 
-
-            if (scriptURL === 'https://https://script.google.com/macros/s/AKfycbwMY5cy19grq6kps1y6GiwlC6CtVPo2XVTKpMyClu5ULsCuPxZjEoGVJ3Jn58BmKJNw7g/exec' || !scriptURL.includes('/exec')) {
-                console.log('유효한 웹앱 URL이 설정되지 않아 구글 시트 전송을 건너뜁니다.');
-                return;
+            // 구글 앱스 스크립트 환경(웹앱)에서 실행될 때만 작동합니다.
+            if (typeof google !== 'undefined' && google.script) {
+                google.script.run
+                    .withSuccessHandler(function(response) {
+                        console.log('✅ 시트 저장 완료:', response);
+                    })
+                    .withFailureHandler(function(error) {
+                        console.error('❌ 저장 에러:', error);
+                        alert("데이터 저장 중 오류가 발생했습니다.");
+                    })
+                    .saveQuizData(data); // 백엔드(Code.gs)에 작성해 둔 saveQuizData 함수를 직접 호출!
+            } else {
+                // 실습창 미리보기나 로컬 환경에서는 콘솔창에 로그만 띄웁니다.
+                console.log('로컬 환경 테스트용: 구글 시트 전송 생략', data);
             }
-
-            fetch(scriptURL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-                body: JSON.stringify(data)
-            })
-            .then(response => console.log('✅ 전송 완료:', response))
-            .catch(error => console.error('❌ 전송 에러:', error));
         }
     </script>
 </body>
